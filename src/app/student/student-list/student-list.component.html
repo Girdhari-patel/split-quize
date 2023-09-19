@@ -1,0 +1,32 @@
+<div class="table-wrapper">
+    <h1>Student Table</h1>
+    <table id="col" class="fl-table">
+      <thead>
+        <tr>
+          <!-- <th>#ID</th> -->
+          <th>Name</th>
+          <th>dob</th>
+          <th>Email</th>
+          <th>mobile</th>
+          <th>Action</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of Student">
+        <td><img [src]="item.image" alt="" class="img" ></td>
+          <th>{{ item.Name }}</th>
+          <td>{{ item.dob}}</td>
+          <td>{{ item.Email }}</td>
+          <td>{{ item.mobile }} </td>
+          <!-- <td>{{ item.address }}</td> -->
+          <td>
+            <!-- <button type="button"[routerLink]="['/updatestudent',item.id]">Edit</button> -->
+            <button type="button" (click)="removeStudent(item)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+ 
+  </div>

@@ -1,0 +1,28 @@
+<!-- <p>
+    <mat-toolbar>
+      <span>Angular Project</span>
+    </mat-toolbar>
+  </p> -->
+  <!-- <button (click)="add()">done</button> -->
+  
+  <div class="container">
+    <div class="quiz-container" *ngFor="let item of quizz">
+      <div class="img-container">
+        <img [src]="getImgContent(item.image)" class="img" />
+      </div>
+      <div class="contentDiv" >
+        <span class="quiz-Name">
+          <h3>{{ item.quizName }}</h3>
+        </span>
+        <div class="quiz-Description">
+          <p>{{ item.quizDescription }}</p>
+        </div>
+        <div class="openBtn">
+          <button mat-raised-button class="create-quiz-btn" (click)="openDialog(item)">split quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   
+  

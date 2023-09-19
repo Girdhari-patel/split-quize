@@ -1,0 +1,18 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <button mat-button>
+      <span (click)="switch('register-student')">register student</span>
+    </button>
+    <br>
+    
+    <button mat-button>
+      <span (click)="switch('Student list')">Student list</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content *ngIf="regesterStd" > 
+    <app-register-student ></app-register-student>
+  </mat-sidenav-content>
+  <mat-sidenav-content *ngIf="studentList" > 
+    <app-student-list></app-student-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>

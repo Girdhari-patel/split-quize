@@ -1,0 +1,52 @@
+<div class="dialog-container">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+        <mat-icon class="close-icon" >close</mat-icon>
+      </button>
+      
+    <h2 mat-dialog-title>split your {{data.quiz.quizName}} quiz using drag and drop</h2>
+    <mat-dialog-content class="mat-typography">
+      <h3>how many splices you want</h3>
+    
+      <div class="inputSplit">
+        <input class="input-container" type="number"  [(ngModel)]="input" #ctrl="ngModel"  required>
+       
+        <button  mat-raised-button class="create-quiz-btn" (click)="splitQuiz(ctrl)">split</button>
+    
+      </div>
+    
+        
+      <div cdkDropListGroup>
+        <div class="example-container">
+        
+          <div class="split-quiz-container" *ngFor="let todo of todos; let i = index">
+               <h4 style="margin-top:5px;">Quiz {{i+1}}</h4>
+               <div
+            cdkDropList
+            #todoList="cdkDropList"
+      
+          
+            [cdkDropListData]="todo"
+            [cdkDropListConnectedTo]="[todoList]"
+         
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of todo;let i = index" cdkDrag>
+                
+                {{item.questionName}}
+            </div>
+               </div>
+          </div>
+        </div>
+      </div>
+       
+    
+    
+    </mat-dialog-content>
+    <mat-dialog-actions align="end" *ngIf=" todos.length != 0 " >
+      <button mat-button mat-dialog-close class="create-quiz-btn">Cancel</button>
+      <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="create-quiz-btn"  (click)="add()">Save</button>
+    </mat-dialog-actions>
+    
+  
+  </div>
+  

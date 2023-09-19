@@ -1,0 +1,50 @@
+<p>
+  <mat-toolbar class="mat-toolbar">
+    <span>Angular Project</span>
+    <ul class="menu">
+      <li class="menu-list">
+        <a routerLink="workbench" routerLinkActive="router-link-active">Work Bench</a>
+      </li>
+      <li class="menu-list">
+        <a routerLink="quiz" routerLinkActive="router-link-active">Quiz</a>
+      </li>
+    </ul>
+
+    <div class="nav">
+      <ng-container *ngIf="currentUser$ | async as user; else loginButton">
+        <button mat-button [matMenuTriggerFor]="userMenu">
+          <img
+            width="30"
+            height="30"
+            class="profile-image-toolbar"
+            [src]="user.photoURL ?? '/assets/Profile-image.jpeg'"
+          />
+          {{ user.displayName || user.email }}
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </ng-container>
+      <ng-template #loginButton>
+        <button mat-button class="mat-button1" routerLink="login">Login</button>
+        <button mat-raised-button class="mat-button1">
+          <a class="sign-up-link" (click)="signUp()">Sign-Up</a>
+        </button>
+      </ng-template>
+  
+    </div>
+    
+    <!--  mat-icon / matMenu -->
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item routerLink="/profile">
+        <mat-icon>account_circle</mat-icon>
+        Profile
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</p>
+<div class="router">
+  <router-outlet></router-outlet>
+</div>

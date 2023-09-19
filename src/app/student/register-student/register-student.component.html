@@ -1,0 +1,30 @@
+<div class="form-container">
+  <form [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+    <mat-form-field floatLable="always" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput required formControlName="Name" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field floatLable="always" appearance="fill">
+      <mat-label>Date of birth</mat-label>
+      <input matInput formControlName="dob" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field floatLable="always" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="Email" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field floatLable="always" appearance="fill">
+      <mat-label>Mobile Number</mat-label>
+      <input matInput formControlName="mobile" />
+    </mat-form-field>
+    <br />
+    <input type="file" formControlName="image" accept="image/*" />
+
+    <button [disabled]="submitForm.invalid">submit</button>
+  </form>
+</div>

@@ -1,0 +1,60 @@
+mat-toolbar{
+    /* justify-content: space-between; */
+    background-color: #eff4f7;
+    text-align: right;
+    color:black;
+ 
+}
+a{
+  color: black;
+  
+}
+img{
+border-radius: 100%;
+}
+
+.content{
+    padding: 32px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  li {
+    display: inline;
+    float: left;
+  }
+  li a{
+    display: block;
+    padding: 8px;
+    
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .mat-button1
+  {
+    background-color: #fcd814;
+   margin-right: 5px;
+    
+    
+  }
+  .nav {
+    flex: 1;
+     
+  }
+  
+   .nav > mat-button1{
+    padding: p 10px;
+   
+  }
+    
+   /* /* .container{
+    float:left; */
+
+
+  /* .space{
+    flex: 8;
+  } */
